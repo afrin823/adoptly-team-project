@@ -17,12 +17,7 @@ export default function AdoptionSection() {
 
       {/* content */}
       <div
-        className="adoptionImage relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center p-6 md:p-12 bg-cover bg-center rounded-2xl overflow-hidden"
-        style={{
-          // backgroundImage:
-          //   "url('https://tebewebe.online/furrescue/wp-content/uploads/sites/98/2024/03/teenager-with-broken-arm-in-cast-and-pet-cat.jpg')",
-        }}
-      >
+        className="adoptionImage relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center p-6 md:p-12 bg-cover bg-center rounded-2xl overflow-hidden">
         {/* play */}
         <div className="w-full md:w-1/2 flex items-center justify-center mb-6 md:mb-0">
           <button className="w-20 h-20 animate-pulse bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition">
@@ -46,7 +41,7 @@ export default function AdoptionSection() {
           variants={textVariant}
         >
           <motion.p
-            className="text-sm text-orange-400  uppercase tracking-wide mb-2"
+            className="text-md text-orange-400 font-bold  uppercase tracking-wide mb-2"
             variants={textVariant}
           >
             Success Stories
@@ -63,7 +58,7 @@ export default function AdoptionSection() {
             nostra diam fames.
           </motion.p>
           <motion.button
-            className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-md transition"
+            className="bg-[#E76F51]  text-[#e9e9e9] cursor-pointer font-semibold px-6 py-3 rounded-lg shadow-md transition"
             variants={textVariant}
           >
             View More Stories
