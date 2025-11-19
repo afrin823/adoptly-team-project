@@ -1,8 +1,10 @@
+import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 import React from 'react';
 
 const AdoptedList = ({ adoptedData, adoptedFilterData }) => {
     return (
-        <div>
+        <UserProtectedRoute>
+             <div>
             <div className="overflow-x-auto rounded-box border border-base-content/5 ">
                 <table className="table">
                     <thead>
@@ -55,6 +57,7 @@ const AdoptedList = ({ adoptedData, adoptedFilterData }) => {
                 </table>
             </div>
         </div>
+       </UserProtectedRoute>
     );
 };
 

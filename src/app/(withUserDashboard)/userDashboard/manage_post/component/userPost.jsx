@@ -9,6 +9,7 @@ import UserDataUpdate from './userDataUpdate';
 import Swal from 'sweetalert2';
 import Image from 'next/image';
 import { FaCamera } from 'react-icons/fa';
+import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 import Link from 'next/link';
 const IMG_API_KEY = process.env.NEXT_PUBLIC_IMG_HOSTING;
 const IMG_HOSTING = `https://api.imgbb.com/1/upload?key=${IMG_API_KEY}`
@@ -129,7 +130,8 @@ const UserPost = ({ user, refetch, loading, userPostData, open, onOpenModal, onC
     }
 
     return (
-        <div>
+        <UserProtectedRoute>
+             <div>
             <div className="w-full overflow-x-auto rounded-box border border-base-content/5 ">
                 <table className="table">
                     {/* head */}
@@ -369,6 +371,7 @@ const UserPost = ({ user, refetch, loading, userPostData, open, onOpenModal, onC
                 </form>
             </Modal>
         </div>
+        </UserProtectedRoute>
     );
 };
 

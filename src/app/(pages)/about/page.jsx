@@ -5,10 +5,12 @@ import StatsSection from './(component)/statsSection';
 import PetAboutUs from './(component)/petAboutUs';
 import FeaturesSection from './(component)/featuresSection';
 import GallerySection from './(component)/gallerySection';
+import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 
 const About = () => {
     return (
-        <div className=''>
+      <UserProtectedRoute>
+          <div className=''>
           <AboutHero title={"About us"} /> 
           <MissionSection />
           <StatsSection />
@@ -16,6 +18,7 @@ const About = () => {
           <FeaturesSection />
           <GallerySection />
         </div>
+      </UserProtectedRoute>
     );
 };
 

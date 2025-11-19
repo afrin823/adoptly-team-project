@@ -20,6 +20,7 @@ import { adminDataFetching } from '@/hooks/adminDataFetching/admin';
 import useAuth from '@/hooks/useAuth';
 import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 import { axiosPublic } from '@/lib/axios/axios';
+import AdminProtectedRoute from '@/components/protectedRoute/AdminProtectedRoute';
 
 // 🌀 Framer Motion Animation Variants
 const animationVariants = {
@@ -96,11 +97,12 @@ const confirmReject = async () => {
     return <p className="text-center py-10 text-red-500 text-lg">Failed to load pets 😢</p>;
 
   return (
-    <div className="p-4 md:p-8">
+    <AdminProtectedRoute>
+       <div className="p-4 md:p-8">
       {/* Header */}
       <div className="mb-6 flex items-center gap-2">
         <MdPets className="text-3xl text-primary" />
-        <h1 className="text-3xl font-bold text-gray-800">All Pets</h1>
+        <h1 className="text-3xl font-bold text-gray-700">All Pets</h1>
       </div>
 
       {/* Table */}
@@ -110,11 +112,11 @@ const confirmReject = async () => {
         animate="visible"
         className="overflow-x-auto rounded-xl shadow-md"
       >
-        <Table className="min-w-full text-sm md:text-base bg-white">
+        <Table className="min-w-full text-sm md:text-base ">
           <TableCaption>All Pets List Management</TableCaption>
 
           <TableHeader>
-            <TableRow className="bg-gray-100">
+            <TableRow className="">
               <TableHead className="w-[40px] text-center font-semibold">#</TableHead>
               <TableHead className="font-semibold">Image</TableHead>
               <TableHead className="font-semibold">Name</TableHead>
@@ -146,7 +148,7 @@ const confirmReject = async () => {
                 </TableCell>
 
                 <TableCell className="font-medium">{pet.name}</TableCell>
-                <TableCell className="max-w-xs truncate">{pet.description}</TableCell>
+                <TableCell className="max-w-xs truncate hover:text-black">{pet.description}</TableCell>
                 <TableCell>{pet.age}</TableCell>
                 <TableCell>
                   <span
@@ -210,6 +212,7 @@ const confirmReject = async () => {
         </AlertDialogContent>
       </AlertDialog>
     </div>
+   </AdminProtectedRoute>
   );
 };
 

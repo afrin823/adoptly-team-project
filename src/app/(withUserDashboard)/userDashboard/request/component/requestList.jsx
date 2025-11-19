@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useAxiosPublic from '@/hooks/axiosPublic/useAxiosPublic';
 import Swal from 'sweetalert2';
+import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 
 const RequestList = ({ userRequestData, refetch, requestLoading }) => {
 
@@ -68,7 +69,8 @@ const RequestList = ({ userRequestData, refetch, requestLoading }) => {
     }
 
     return (
-        <div>
+        <UserProtectedRoute>
+              <div>
             <div className="overflow-x-auto rounded-box border border-base-content/5 ">
                 <table className="table">
                     {/* head */}
@@ -190,6 +192,7 @@ const RequestList = ({ userRequestData, refetch, requestLoading }) => {
                 </table>
             </div>
         </div>
+      </UserProtectedRoute>
     );
 };
 

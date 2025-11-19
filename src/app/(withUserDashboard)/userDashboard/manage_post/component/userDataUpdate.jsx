@@ -5,6 +5,7 @@ import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import { useForm } from 'react-hook-form';
 import useAuth from '@/hooks/useAuth';
+import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 
 const UserDataUpdate = ({ refetch, petSelectedData, petDataOpen, onPetDataCloseModal }) => {
 
@@ -59,7 +60,8 @@ const UserDataUpdate = ({ refetch, petSelectedData, petDataOpen, onPetDataCloseM
     }
 
     return (
-        <div>
+        <UserProtectedRoute>
+             <div>
             <Modal open={petDataOpen} onClose={onPetDataCloseModal} center>
                 <p className='my-5 font-bold'>Update Pet Data</p>
                 <form onSubmit={handleSubmit(onSubmit)} className=' space-y-2'>
@@ -115,6 +117,7 @@ const UserDataUpdate = ({ refetch, petSelectedData, petDataOpen, onPetDataCloseM
                 </form>
             </Modal>
         </div>
+       </UserProtectedRoute>
     );
 };
 

@@ -1,4 +1,5 @@
 "use client"
+import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 import useAxiosPublic from '@/hooks/axiosPublic/useAxiosPublic';
 import useAuth from '@/hooks/useAuth';
 import { useQuery } from '@tanstack/react-query';
@@ -48,10 +49,9 @@ const UserDashboard = () => {
 
   const filterTotalAdopted = totaladopted.filter(adopted => adopted.isAdopted === true);
 
-
   return (
-    <div className='my-10 mx-5'>
-      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5'>
+    <UserProtectedRoute>
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 my-10 mx-5'>
         <div className='border p-3 space-y-2 rounded-xl border-[#e76f51] shadow-xl'>
           <div className='flex items-center justify-between '>
             <h3 className='text-[16px] text-[#363636bb]'>Total Post</h3>
@@ -101,8 +101,8 @@ const UserDashboard = () => {
           </p>
         </div>
       </div >
-    </div >
-  );
+    </UserProtectedRoute >
+  )
 };
 
 export default UserDashboard;

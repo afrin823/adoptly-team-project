@@ -1,4 +1,5 @@
 "use client"
+import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 import useAxiosPublic from '@/hooks/axiosPublic/useAxiosPublic';
 import useAuth from '@/hooks/useAuth';
 import { useQuery } from '@tanstack/react-query';
@@ -82,7 +83,8 @@ const userProfile = () => {
 
 
     return (
-        <div className='p-5'>
+        <UserProtectedRoute>
+             <div className='p-5'>
             <div className='flex flex-col justify-center items-center'>
                 <div style={{ backgroundImage: `url(${"https://i.ibb.co.com/XrQj0pcg/dark-geometric-background-with-copy-space.jpg"})` }} className='bg-cover bg-center bg-no-repeat border w-full h-40'>
                 </div>
@@ -212,6 +214,7 @@ const userProfile = () => {
                 </div>
             </div> */}
         </div>
+       </UserProtectedRoute>
     );
 };
 

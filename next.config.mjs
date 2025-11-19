@@ -28,17 +28,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 
- 
+
     experimental: {
         optimizeCss: false
     },
     images: {
+        domains: [
+
+            'lh3.googleusercontent.com',
+            'i.ibb.co.com',
+            'res.cloudinary.com'
+
+        ],
         remotePatterns: [
             {
                 protocol: 'https',
                 hostname: 'i.postimg.cc',
                 pathname: '/**',
             },
+
             {
                 protocol: 'https',
                 hostname: 'i.ibb.co',

@@ -1,3 +1,4 @@
+import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 import React from 'react';
 import { AiFillGithub, AiOutlineDribbble, AiOutlineTwitter, AiOutlineMail, AiFillLinkedin } from 'react-icons/ai';
 
@@ -61,7 +62,8 @@ const users = [
 
 const Contributor = () => {
   return (
-    <div className="container mx-auto px-4 py-10">
+    <UserProtectedRoute>
+       <div className="container mx-auto px-4 py-10">
       <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Contributor</h2>
       <p className="max-w-3xl mx-auto text-center text-gray-600 dark:text-gray-300 mb-10">
         This website is the result of our team's collaborative effort to build a modern Pet Service platform. 
@@ -111,6 +113,7 @@ const Contributor = () => {
         ))}
       </div>
     </div>
+   </UserProtectedRoute>
   );
 };
 

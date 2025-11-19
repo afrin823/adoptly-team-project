@@ -4,6 +4,7 @@ import UserPost from './component/userPost';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '@/hooks/axiosPublic/useAxiosPublic';
 import useAuth from '@/hooks/useAuth';
+import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 
 
 
@@ -31,7 +32,8 @@ const userManagePost = () => {
     console.log('checking manage post', userPostData)
 
     return (
-        <div className='mx-5 my-5'>
+        <UserProtectedRoute>
+             <div className='mx-5 my-5'>
             <div className='flex items-center justify-between border p-2'>
                 <button onClick={onOpenModal} className='btn bg-[#E76F51] text-white rounded-xl border-0'>Create Post</button>
                 <input className='input border border-[#bbb] focus:outline-0 bg-white text-black dark:bg-black dark:text-white' placeholder='Search...' type="text" />
@@ -46,6 +48,7 @@ const userManagePost = () => {
                 onCloseModal={onCloseModal}
             />
         </div>
+       </UserProtectedRoute>
     );
 };
 

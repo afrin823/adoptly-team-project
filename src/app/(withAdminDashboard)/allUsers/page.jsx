@@ -29,6 +29,7 @@ import {
 import { axiosPublic } from '@/lib/axios/axios';
 import useAuth from '@/hooks/useAuth';
 import toast from 'react-hot-toast';
+import AdminProtectedRoute from '@/components/protectedRoute/AdminProtectedRoute';
 
 // 🎞 Animation Variants
 const containerVariants = {
@@ -89,7 +90,8 @@ const AllUserPage = () => {
   };
 
   return (
-    <section className="p-4 md:p-8">
+    <AdminProtectedRoute>
+       <section className="p-4 md:p-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
         <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
@@ -207,6 +209,7 @@ const AllUserPage = () => {
         </Table>
       </motion.div>
     </section>
+   </AdminProtectedRoute>
   );
 };
 
