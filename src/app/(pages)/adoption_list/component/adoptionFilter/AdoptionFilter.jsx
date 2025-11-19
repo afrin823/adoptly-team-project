@@ -16,9 +16,18 @@ const AdoptionFilter = ({ filter, setFilter, toggle, handleToggle }) => {
         }
     })
 
-    // const filterPetData = data?.data || []
+    const uniqueSpecies = filterPetData?.filter((item, index, self) => (
+        index === self.findIndex(t => t.species === item.species)
+    ))
+    const uniqueDistric = filterPetData?.filter((item, index, self) => (
+        index === self.findIndex(t => t.address.district === item.address.district)
+    ))
 
-    console.log('chekcing data filter', filterPetData);
+    const uniqueDivision = filterPetData?.filter((item, index, self) => (
+        index === self.findIndex(t => t.address.division === item.address.division)
+    ))
+
+    console.log('checking distric uniq', uniqueDivision);
 
 
 
@@ -48,8 +57,8 @@ const AdoptionFilter = ({ filter, setFilter, toggle, handleToggle }) => {
                 >
                     <option className="dark:text-black" value="">Select Species</option>
                     {
-                        filterPetData?.length > 0 ? (
-                            filterPetData?.map((species, index) => (
+                        uniqueSpecies?.length > 0 ? (
+                            uniqueSpecies?.map((species, index) => (
                                 <option className="dark:text-black" key={index} value={species?.species}>
                                     {species?.species || "N/A"}
                                 </option>
@@ -70,8 +79,8 @@ const AdoptionFilter = ({ filter, setFilter, toggle, handleToggle }) => {
                 >
                     <option value="">Select District</option>
                     {
-                        filterPetData?.length > 0
-                            ? filterPetData.map((item, index) => (
+                        uniqueDistric?.length > 0
+                            ? uniqueDistric.map((item, index) => (
                                 <option className="dark:text-black" key={index} value={item?.address?.district}>
                                     {item?.address?.district || "N/A"}
                                 </option>
@@ -89,8 +98,8 @@ const AdoptionFilter = ({ filter, setFilter, toggle, handleToggle }) => {
                 >
                     <option value="">Select Division</option>
                     {
-                        filterPetData?.length > 0
-                            ? filterPetData.map((item, index) => (
+                        uniqueDivision?.length > 0
+                            ? uniqueDivision.map((item, index) => (
                                 <option className="dark:text-black" key={index} value={item?.address?.division}>
                                     {item?.address?.division || "N/A"}
                                 </option>
