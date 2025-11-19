@@ -16,8 +16,8 @@ export default function SupportHero() {
   };
 
   return (
-    <section className="relative w-full bg-blue-400 text-center pt-20 overflow-hidden">
-    
+    <section className="relative w-full bg-[#c76046] text-center pt-20 overflow-hidden">
+
       <div className="absolute inset-0 bg-contain"></div>
 
       {/* Content */}
@@ -47,10 +47,10 @@ export default function SupportHero() {
 
         {/* Buttons */}
         <motion.div className="mt-6 flex justify-center gap-4" variants={textVariant}>
-          <button className="bg-[#e76f51] hover:bg-opacity-0 hover:outline-2 hover:outline-[#e76f51] text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+          <button className="bg-[#f05f3b] cursor-pointer hover:bg-opacity-0 hover:outline-2 hover:outline-[#e76f51] text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
             Donate Now
           </button>
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+          <button className="border border-[#bbbb] cursor-pointer hover:bg-[#e76f51] duration-150 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
             Be Volunteer
           </button>
         </motion.div>
