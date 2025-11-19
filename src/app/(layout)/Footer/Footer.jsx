@@ -10,16 +10,12 @@ const Footer = () => {
     { text: 'About Us', href: '/about' },
     { text: 'Contact Us', href: '/contact' },
     { text: 'Services', href: '/services' },
-    { text: "FAQ's", href: '/faq' },
-    { text: 'Partnership', href: '/partnership' }
   ];
 
   const getInvolvedLinks = [
-    { text: 'Adopting Pets', href: '/adopt' },
-    { text: 'Shelters & Rescues', href: '/shelters' },
-    { text: 'Dog Adoption', href: '/dog-adoption' },
-    { text: 'Cat Adoption', href: '/cat-adoption' },
-    { text: 'Other type of Pets', href: '/other-pet-adoption' }
+    { text: 'Adopting Pets', href: '/adoption_list' },
+    { text: 'Dog Adoption', href: '/adoption_list' },
+    { text: 'Cat Adoption', href: '/adoption_list' },
   ];
 
   return (
