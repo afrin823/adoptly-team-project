@@ -15,18 +15,17 @@ const UserDashboard = () => {
 
   // Total Post api
   const { data: totalPost = [], refetch: postRefetch, isLoading: postLoading } = useQuery({
-    queryKey: ["userPostData", user?.email],
+    queryKey: ["totalPost", user?.email],
     enabled: !!user?.email,
     queryFn: async () => {
       const res = await axiosPublic.get(`/pets/user/${user?.email}`);
-      // console.log('checking data', res)
       return res.data.pets
     }
   })
 
   // Total Request api
   const { data: totalRequest = [], refetch: requestRefetch, isLoading: requestLoading } = useQuery({
-    queryKey: ["userRequestData", user?.email],
+    queryKey: ["totalRequest", user?.email],
     enabled: !!user?.email,
     queryFn: async () => {
       const res = await axiosPublic.get(`/request/user/${user?.email}`);
@@ -36,7 +35,7 @@ const UserDashboard = () => {
 
   // Total adopted api
   const { data: totaladopted = [], refetch: adoptedRefetch, isLoading: adoptedLoading } = useQuery({
-    queryKey: ["adoptedData", user?.email],
+    queryKey: ["totaladopted", user?.email],
     enabled: !!user?.email,
     queryFn: async () => {
       const res = await axiosPublic.get(`/request/user/${user?.email}`);
@@ -44,72 +43,65 @@ const UserDashboard = () => {
     }
   })
 
+
+  console.log('checking post loading', postLoading)
+
   const filterTotalAdopted = totaladopted.filter(adopted => adopted.isAdopted === true);
-  const mixtedLoading = postLoading || requestLoading || adoptedLoading;
+
 
   return (
     <div className='my-10 mx-5'>
       <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5'>
-        {
-          !mixtedLoading ? (
-            <div className='border p-3 space-y-2 rounded-xl border-[#e76f51]'>
-              <div className='flex items-center justify-between '>
-                <h3 className='text-[16px] text-[#363636bb]'>Total Post</h3>
-                <BsFilePost className='text-2xl' />
-              </div>
-              <p className='text-2xl font-semibold'>
-                {
-                  totalPost ? totalPost.length : 0
-                }
-              </p>
-            </div>
-          ) : (
-            <div className="w-full flex items-center animate-pulse space-x-4">
-              <div className="w-full h-full rounded-xl animate-pulse bg-gray-200"></div>
-            </div>
-          )}
-        {
-          !mixtedLoading ? (
-            <div className='border p-3 space-y-2 rounded-xl border-[#e76f51]'>
-              <div className='flex items-center justify-between '>
-                <h3 className='text-[16px] text-[#363636bb]'>Total Request</h3>
-                <FaCodePullRequest className='text-2xl' />
-              </div>
-              <p className='text-2xl font-semibold'>
-                {
-                  totalRequest ? totalRequest.length : 0
-                }
-              </p>
-            </div>
-          ) : (
-            <div className="w-full flex items-center animate-pulse space-x-4">
-              <div className="w-full h-full rounded-xl animate-pulse bg-gray-200"></div>
-            </div>
-          )
-        }
+        <div className='border p-3 space-y-2 rounded-xl border-[#e76f51] shadow-xl'>
+          <div className='flex items-center justify-between '>
+            <h3 className='text-[16px] text-[#363636bb]'>Total Post</h3>
+            <BsFilePost className='text-3xl text-[#E76F51]' />
+          </div>
+          <p className='text-3xl font-semibold '>
+            {
+              postLoading ? (
+                <div className="w-10 h-10 rounded-xl animate-pulse bg-gray-200"></div>
+              ) : (
+                totalPost ? totalPost.length : 0
+              )
 
-        {
-          !mixtedLoading ? (
-            <div className='border p-3 space-y-2 rounded-xl border-[#e76f51]'>
-              <div className='flex items-center justify-between'>
-                <h3 className='text-[16px] text-[#363636bb]'>Allready adopted</h3>
-                <IoDocumentTextSharp className='text-2xl' />
-              </div>
-              <p className='text-2xl font-semibold'>
-                {
-                  filterTotalAdopted ? filterTotalAdopted.length : 0
-                }
-              </p>
-            </div>
-          ) : (
-            <div className="w-full flex items-center animate-pulse space-x-4">
-              <div className="w-full h-full rounded-xl animate-pulse bg-gray-200"></div>
-            </div>
-          )
-        }
+            }
+          </p>
+        </div>
 
-      </div>
-    </div>
+        {/* <div className="w-full h-full rounded-xl animate-pulse bg-gray-200"></div> */}
+        <div className='border p-3 space-y-2 rounded-xl border-[#e76f51] shadow-xl'>
+          <div className='flex items-center justify-between '>
+            <h3 className='text-[16px] text-[#363636bb]'>Total Request</h3>
+            <FaCodePullRequest className='text-2xl text-[#E76F51]' />
+          </div>
+          <p className='text-3xl font-semibold'>
+            {
+              requestLoading ? (
+                <div className="w-10 h-10 rounded-xl animate-pulse bg-gray-200"></div>
+              ) : (
+                totalRequest ? totalRequest.length : 0
+              )
+            }
+          </p>
+        </div>
+        <div className='border p-3 space-y-2 rounded-xl border-[#e76f51] shadow-xl'>
+          <div className='flex items-center justify-between'>
+            <h3 className='text-[16px] text-[#363636bb]'>Allready adopted</h3>
+            <IoDocumentTextSharp className='text-3xl text-[#E76F51]' />
+          </div>
+          <p className='text-3xl font-semibold'>
+            {
+              adoptedLoading ? (
+                <div className="w-10 h-10 rounded-xl animate-pulse bg-gray-200"></div>
+              ) : (
+                filterTotalAdopted ? filterTotalAdopted.length : 0
+              )
+            }
+          </p>
+        </div>
+      </div >
+    </div >
   );
 };
 
