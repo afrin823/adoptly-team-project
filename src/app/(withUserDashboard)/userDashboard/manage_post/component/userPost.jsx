@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 import Image from 'next/image';
 import { FaCamera } from 'react-icons/fa';
 import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
+import Link from 'next/link';
 const IMG_API_KEY = process.env.NEXT_PUBLIC_IMG_HOSTING;
 const IMG_HOSTING = `https://api.imgbb.com/1/upload?key=${IMG_API_KEY}`
 
@@ -191,6 +192,7 @@ const UserPost = ({ user, refetch, loading, userPostData, open, onOpenModal, onC
                                             <div className="dropdown dropdown-end">
                                                 <div tabIndex={0} role="button" className="btn bg-white text-black shadow-none border border-[#bbb] m-1">...</div>
                                                 <ul tabIndex={0} className="space-y-2 dropdown-content menu bg-white rounded-box z-1 w-52 p-2 shadow-sm">
+                                                    <li className='bg-[#219ebc] text-white'><Link href={`/userDashboard/manage_post/${pets?._id}`}>Total Request</Link></li>
                                                     <li className='bg-[#219ebc] text-white' onClick={() => { onPetDataOpenModal(), setPetSelectedData(pets) }}><a>Update</a></li>
                                                     <li className='bg-[#c1121f] text-white' onClick={() => handlePetDelete(pets?._id)}><a>Delete</a></li>
                                                 </ul>

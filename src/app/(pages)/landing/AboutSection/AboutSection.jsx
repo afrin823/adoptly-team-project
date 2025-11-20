@@ -14,7 +14,7 @@ const AboutSection = () => {
                     <p className='font-rubik text-base sm:text-lg text-[#616161]'>All they need is a loving home and proper care, and all you need is their unconditional love in return.</p>
                     <p className='font-rubik text-sm sm:text-base text-[#707070]'>At our shelter, rescued animals receive the care, attention, and love they deserve. Every adoption brings joy, companionship, and a second chance at life for them.</p>
                     <div className='flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 mt-3 justify-center lg:justify-start'>
-                        <button className='btn bg-[#e76f51] text-white rounded-xl px-6 py-3'>Discover More</button>
+                        <button className='btn bg-[#e76f51] text-white rounded-xl px-6 py-3 border-0 outline-0'>Discover More</button>
                         <div className='flex items-center gap-3'>
                             <div className='border bg-[#e76f51d3] hover:bg-[#e76f51] duration-300 text-white border-white p-3 rounded-full shadow-2xl'>
                                 <FaPlay />

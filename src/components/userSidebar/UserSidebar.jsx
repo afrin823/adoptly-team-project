@@ -1,5 +1,4 @@
 'use client';
-import { Home, Inbox, Calendar, Search, Settings, } from "lucide-react"
 import { LuLayoutGrid } from "react-icons/lu";
 import { BsFilePost, BsListCheck } from "react-icons/bs";
 import { ImProfile } from "react-icons/im";
@@ -46,28 +45,22 @@ const items = [
     url: "/userDashboard/already_adopted",
     icon: BsListCheck,
   },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
 ]
 
 const UserSidebar = () => {
   return (
     <Sidebar>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Dashboard</SidebarGroupLabel>
+        <SidebarGroup >
+          <SidebarGroupLabel className={"text-xl my-2"}>User Dashboard</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-
                   <SidebarMenuButton asChild >
                     <Link href={item.url}>
-                      <item.icon className="text-2xl" />
-                      <span className="">{item.title}</span>
+                      <item.icon />
+                      <span className="text-[15px]">{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
