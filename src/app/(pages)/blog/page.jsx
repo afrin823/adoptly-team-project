@@ -6,12 +6,12 @@ import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 
 const blogPage = () => {
     return (
-        <UserProtectedRoute>
+       
               <div>
             <BlogHero title={"Blog & Article"} />
             <BlogCard />
         </div>
-      </UserProtectedRoute>
+      
     );
 };
 

@@ -86,13 +86,13 @@ export default function ConnectSection() {
               viewport={{ once: true }}
               className="flex gap-4"
             >
-              <div className="flex items-center justify-center w-12 h-12 bg-red-400 rounded-lg text-white">
+              <div className="flex items-center justify-center w-12 px-3 h-12 bg-red-400 rounded-lg text-white">
                 <Mail size={22} />
               </div>
               <div>
                 <h3 className="font-bold text-xl dark:text-[#cfcfcf]">Email Us</h3>
-                <p className="text-gray-600  dark:text-[#bbb]">hello@example.com</p>
-                <p className="text-gray-600 dark:text-[#bbb]">information@example.com</p>
+                <p className="text-gray-600  dark:text-[#bbb]">jubayerahmed2462@gmail.com</p>
+                <p className="text-gray-600 dark:text-[#bbb]">kalidashodekare14@gmail.com</p>
               </div>
             </motion.div>
 
@@ -102,15 +102,15 @@ export default function ConnectSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="flex gap-4"
+              className="flex gap-4 lg:ml-5"
             >
               <div className="flex items-center justify-center w-12 h-12 bg-red-400 rounded-lg text-white">
                 <Phone size={22} />
               </div>
               <div>
                 <h3 className="font-bold text-xl dark:text-[#cfcfcf]">Call Us</h3>
-                <p className="text-gray-600  dark:text-[#bbb]">Phone 1: +1.555.987.6543</p>
-                <p className="text-gray-600  dark:text-[#bbb]">Phone 2: +1.555.987.6541</p>
+                <p className="text-gray-600  dark:text-[#bbb]">Phone 1: +8801568692142</p>
+                <p className="text-gray-600  dark:text-[#bbb]">Phone 2: +8801776046270</p>
               </div>
             </motion.div>
           </div>
