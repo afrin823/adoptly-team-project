@@ -9,7 +9,7 @@ import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 
 const About = () => {
     return (
-      <UserProtectedRoute>
+   
           <div className=''>
           <AboutHero title={"About us"} /> 
           <MissionSection />
@@ -18,7 +18,7 @@ const About = () => {
           <FeaturesSection />
           <GallerySection />
         </div>
-      </UserProtectedRoute>
+     
     );
 };
 
