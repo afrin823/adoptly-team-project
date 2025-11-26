@@ -63,7 +63,7 @@ const allPets = () => {
     }
 
     return (
-        <ProtectedRoute>
+       
               <div className='flex'>
             <AdoptionFilter a
                 adoptionData={adoptionData}
@@ -82,7 +82,7 @@ const allPets = () => {
 
             />
         </div>
-      </ProtectedRoute>
+     
     );
 };
 

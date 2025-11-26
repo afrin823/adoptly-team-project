@@ -6,13 +6,13 @@ import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 
 const page = () => {
     return (
-        <UserProtectedRoute>
+        
              <div>
              <AboutHero title={"Contributor"} />
              <Contributor />
              <AboutSection />
         </div>
-       </UserProtectedRoute>
+       
     );
 };
 

@@ -7,14 +7,14 @@ import UserProtectedRoute from '@/components/protectedRoute/UserProtectedRoute';
 
 const page = () => {
     return (
-        <UserProtectedRoute>
+       
              <div>
             <AboutHero title={"Contact Us"} />
             <ReachUs />
             <Map />
             <ContactUs />
         </div>
-       </UserProtectedRoute>
+       
     );
 };
 
